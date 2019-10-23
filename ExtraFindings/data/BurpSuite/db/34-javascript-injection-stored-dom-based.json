@@ -1,0 +1,45 @@
+{
+    "id": 2097954,
+    "title": "JavaScript injection (stored DOM-based)",
+    "description": [
+        "Stored DOM-based vulnerabilities arise when user input is stored and later embedded into a response within a part of the DOM that is then processed in an unsafe way by a client-side script. An attacker can leverage the data storage to control a part of the response (for example, a JavaScript string) that can be used to trigger the DOM-based vulnerability.",
+        "DOM-based JavaScript injection arises when a script executes controllable data as JavaScript. An attacker may be able to use the vulnerability to construct a URL that, if visited by another application user, will cause JavaScript code supplied by the attacker to execute within the user's browser in the context of that user's session with the application.",
+        "The attacker-supplied code can perform a wide variety of actions, such as stealing the victim's session token or login credentials, performing arbitrary actions on the victim's behalf, and logging their keystrokes.",
+        "Users can be induced to visit the attacker's crafted URL in various ways, similar to the usual attack delivery vectors for reflected cross-site scripting vulnerabilities.",
+        "Burp Suite automatically identifies this issue using static code analysis, which may lead to false positives that are not actually exploitable. The relevant code and execution paths should be reviewed to determine whether this vulnerability is indeed present, or whether mitigations are in place that would prevent exploitation."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "The most effective way to avoid DOM-based JavaScript injection vulnerabilities is not to execute as JavaScript any data that originated from an untrusted source. If the desired functionality of the application means that this behavior is unavoidable, then defenses must be implemented within the client-side code to prevent malicious data from executing as script. In many cases, the relevant data can be validated on a whitelist basis, to allow only content that is known to be safe. In other cases, it will be necessary to sanitize or encode the data. This can be a complex task, and may need to involve a combination of JavaScript escaping and HTML encoding, in the appropriate sequence."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00200322_javascript-injection-stored-dom-based",
+            "title": "JavaScript injection (stored DOM-based)"
+        },
+        {
+            "url": "https://portswigger.net/web-security/cross-site-scripting/reflected",
+            "title": "Reflected XSS"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/79.html",
+            "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/80.html",
+            "title": "CWE-80: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/159.html",
+            "title": "CWE-159: Failure to Sanitize Special Element"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

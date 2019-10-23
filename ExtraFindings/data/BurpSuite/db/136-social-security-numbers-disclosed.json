@@ -1,0 +1,25 @@
+{
+    "id": 6292480,
+    "title": "Social security numbers disclosed",
+    "description": [
+        "Applications sometimes disclose sensitive personal information such as social security numbers. Responses containing social security numbers may not represent any security vulnerability - for example, a number may belong to the logged-in user to whom it is displayed. If a social security number is identified during a security assessment it should be verified, then application logic reviewed to identify whether its disclosure within the application is necessary and appropriate."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            ""
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00600400_social-security-numbers-disclosed",
+            "title": "Social security numbers disclosed"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/200.html",
+            "title": "CWE-200: Information Exposure"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

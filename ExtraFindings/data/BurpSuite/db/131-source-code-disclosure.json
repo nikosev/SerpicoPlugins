@@ -1,0 +1,45 @@
+{
+    "id": 6291632,
+    "title": "Source code disclosure",
+    "description": [
+        "Source code intended to be kept server-side can sometimes end up being disclosed to users. Such code may contain sensitive information such as database passwords and secret keys, which may help malicious users formulate attacks against the application."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Server-side source code is normally disclosed to clients as a result of typographical errors in scripts or because of misconfiguration, such as failing to grant executable permissions to a script or directory. Review the cause of the code disclosure and prevent it from happening."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/006000b0_source-code-disclosure",
+            "title": "Source code disclosure"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/18.html",
+            "title": "CWE-18: Source Code"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/200.html",
+            "title": "CWE-200: Information Exposure"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/388.html",
+            "title": "CWE-388: Error Handling"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/540.html",
+            "title": "CWE-540: Information Exposure Through Source Code"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/541.html",
+            "title": "CWE-541: Information Exposure Through Include Source Code"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/615.html",
+            "title": "CWE-615: Information Exposure Through Comments"
+        }
+    ],
+    "severity": "Low",
+    "language": "English"
+}

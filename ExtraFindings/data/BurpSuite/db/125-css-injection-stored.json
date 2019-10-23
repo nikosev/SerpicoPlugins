@@ -1,0 +1,42 @@
+{
+    "id": 5247745,
+    "title": "CSS injection (stored)",
+    "description": [
+        "CSS injection vulnerabilities arise when an application imports a style sheet from a user-supplied URL, or embeds user input in CSS blocks without adequate escaping. They are closely related to cross-site scripting (XSS) vulnerabilities but often trickier to exploit.",
+        "Being able to inject arbitrary CSS into the victim's browser may enable various attacks, including:",
+        "<bullet>Executing arbitrary JavaScript using IE's expression() function.</bullet>",
+        "<bullet>Using CSS selectors to read parts of the HTML source, which may include sensitive data such as anti-CSRF tokens.</bullet>",
+        "<bullet>Capturing any sensitive data within the URL query string by making a further style sheet import to a URL on the attacker's domain, and monitoring the incoming Referer header.</bullet>",
+        "Stored CSS injection vulnerabilities arise when the applicable input was submitted in an previous request and stored by the application."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Ensure that user input is adequately escaped before embedding it in CSS blocks, and consider using a whitelist to prevent loading of arbitrary style sheets."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00501301_css-injection-stored",
+            "title": "CSS injection (stored)"
+        },
+        {
+            "url": "https://portswigger.net/blog/detecting-and-exploiting-path-relative-stylesheet-import-prssi-vulnerabilities#badcss",
+            "title": "Malicious CSS"
+        },
+        {
+            "url": "https://mksben.l0.cm/2015/10/css-based-attack-abusing-unicode-range.html",
+            "title": "CSS based Attack: Abusing unicode-range of @font-face"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/73.html",
+            "title": "CWE-73: External Control of File Name or Path"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/20.html",
+            "title": "CWE-20: Improper Input Validation"
+        }
+    ],
+    "severity": "Medium",
+    "language": "English"
+}

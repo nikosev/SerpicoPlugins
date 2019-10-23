@@ -1,0 +1,25 @@
+{
+    "id": 4196864,
+    "title": "Duplicate cookies set",
+    "description": [
+        "The response contains two or more Set-Cookie headers that attempt to set the same cookie to different values. Browsers will only accept one of these values, typically the value in the last header. The presence of the duplicate headers may indicate a programming error."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            ""
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400a00_duplicate-cookies-set",
+            "title": "Duplicate cookies set"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

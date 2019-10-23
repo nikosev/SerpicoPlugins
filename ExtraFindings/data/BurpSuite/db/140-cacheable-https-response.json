@@ -1,0 +1,31 @@
+{
+    "id": 7340288,
+    "title": "Cacheable HTTPS response",
+    "description": [
+        "Unless directed otherwise, browsers may store a local cached copy of content received from web servers. Some browsers, including Internet Explorer, cache content accessed via HTTPS. If sensitive information in application responses is stored in the local cache, then this may be retrieved by other users who have access to the same computer at a future time."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Applications should return caching directives instructing browsers not to store local copies of any sensitive data. Often, this can be achieved by configuring the web server to prevent caching for relevant paths within the web root. Alternatively, most web development platforms allow you to control the server's caching directives from within individual scripts. Ideally, the web server should return the following HTTP headers in all responses containing sensitive content:",
+            "<bullet>Cache-control: no-store</bullet>",
+            "<bullet>Pragma: no-cache</bullet>"
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00700100_cacheable-https-response",
+            "title": "Cacheable HTTPS response"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/524.html",
+            "title": "CWE-524: Information Exposure Through Caching"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/525.html",
+            "title": "CWE-525: Information Exposure Through Browser Caching"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,38 @@
+{
+    "id": 1050112,
+    "title": "XPath injection",
+    "description": [
+        "XPath injection vulnerabilities arise when user-controllable data is incorporated into XPath queries in an unsafe manner. An attacker can supply crafted input to break out of the data context in which their input appears and interfere with the structure of the surrounding query.",
+        "Depending on the purpose for which the vulnerable query is being used, an attacker may be able to exploit an XPath injection flaw to read sensitive application data or interfere with application logic."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "User input should be strictly validated before being incorporated into XPath queries. In most cases, it will be appropriate to accept input containing only short alphanumeric strings. At the very least, input containing any XPath metacharacters such as &quot; ' / @ = * [ ] ( and ) should be rejected."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00100600_xpath-injection",
+            "title": "XPath injection"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/94.html",
+            "title": "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/159.html",
+            "title": "CWE-159: Failure to Sanitize Special Element"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/643.html",
+            "title": "CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

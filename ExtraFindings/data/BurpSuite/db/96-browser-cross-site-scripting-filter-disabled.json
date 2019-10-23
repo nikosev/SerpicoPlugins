@@ -1,0 +1,37 @@
+{
+    "id": 5245360,
+    "title": "Browser cross-site scripting filter disabled",
+    "description": [
+        "Some browsers, including Internet Explorer, contain built-in filters designed to protect against cross-site scripting (XSS) attacks. Applications can instruct browsers to disable this filter by setting the following response header:",
+        "X-XSS-Protection: 0",
+        "This behavior does not in itself constitute a vulnerability; in some cases XSS filters may themselves be leveraged to perform attacks against application users. However, in typical situations XSS filters do provide basic protection for application users against some XSS vulnerabilities in applications. The presence of this header should be reviewed to establish whether it affects the application's security posture."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Review whether the application needs to disable XSS filters. In most cases you can gain the protection provided by XSS filters without the associated risks by using the following response header:",
+            "X-XSS-Protection: 1; mode=block",
+            "When this header is set, browsers that detect an XSS attack will simply render a blank page instead of attempting to sanitize the injected script. This behavior is considerably less likely to introduce new security issues."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/005009b0_browser-cross-site-scripting-filter-disabled",
+            "title": "Browser cross-site scripting filter disabled"
+        },
+        {
+            "url": "https://portswigger.net/web-security/cross-site-scripting",
+            "title": "Cross-site scripting"
+        },
+        {
+            "url": "https://blogs.msdn.microsoft.com/ieinternals/2011/01/31/controlling-the-xss-filter/",
+            "title": "Controlling the XSS Filter"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,26 @@
+{
+    "id": 8388864,
+    "title": "Multiple content types specified",
+    "description": [
+        "If a response specifies multiple incompatible content types, then the browser will usually analyze the response and attempt to determine the actual MIME type of its content. This can have unexpected results, and if the content contains any user-controllable data may lead to cross-site scripting or other client-side vulnerabilities.",
+        "In most cases, the presence of multiple incompatible content type statements does not constitute a security flaw, particularly if the response contains static content. You should review the contents of affected responses, and the context in which they appear, to determine whether any vulnerability exists."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "For every response containing a message body, the application should include a single Content-type header that correctly and unambiguously states the MIME type of the content in the response body."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00800100_multiple-content-types-specified",
+            "title": "Multiple content types specified"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/436.html",
+            "title": "CWE-436: Interpretation Conflict"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,34 @@
+{
+    "id": 4194560,
+    "title": "Referer-dependent response",
+    "description": [
+        "Application responses may depend systematically on the presence or absence of the Referer header in requests. This behavior does not necessarily constitute a security vulnerability, and you should investigate the nature of and reason for the differential responses to determine whether a vulnerability is present.",
+        "Common explanations for Referer-dependent responses include:",
+        "<bullet>Referer-based access controls, where the application assumes that if you have arrived from one privileged location then you are authorized to access another privileged location. These controls can be trivially defeated by supplying an accepted Referer header in requests for the vulnerable function.</bullet>",
+        "<bullet>Attempts to prevent cross-site request forgery attacks by verifying that requests to perform privileged actions originated from within the application itself and not from some external location. Such defenses are often not robust, and can be bypassed by removing the Referer header entirely.</bullet>",
+        "<bullet>Delivery of Referer-tailored content, such as welcome messages to visitors from specific domains, search-engine optimization (SEO) techniques, and other ways of tailoring the user's experience. Such behaviors often have no security impact; however, unsafe processing of the Referer header may introduce vulnerabilities such as SQL injection and cross-site scripting. If parts of the document (such as META keywords) are updated based on search engine queries contained in the Referer header, then the application may be vulnerable to persistent code injection attacks, in which search terms are manipulated to cause malicious content to appear in responses served to other application users.</bullet>"
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "The Referer header is not a robust foundation on which to build access controls. Any such measures should be replaced with more secure alternatives that are not vulnerable to Referer spoofing.",
+            "If the contents of responses is updated based on Referer data, then the same defenses against malicious input should be employed here as for any other kinds of user-supplied data."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400100_referer-dependent-response",
+            "title": " Referer-dependent response"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/213.html",
+            "title": "CWE-213: Intentional Information Exposure"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,30 @@
+{
+    "id": 2098691,
+    "title": "Cross-origin resource sharing: all subdomains trusted",
+    "description": [
+        "An HTML5 cross-origin resource sharing (CORS) policy controls whether and how content running on other domains can perform two-way interaction with the domain that publishes the policy. The policy is fine-grained and can apply access controls per-request based on the URL and other features of the request.",
+        "If an application allows interaction from all subdomains, then this significantly increases its attack surface. For example, a cross-site scripting (XSS) vulnerability in any subdomain could potentially compromise the application that publishes the policy. Some consumer ISPs return custom content when requests are made to unregistered subdomains, which can introduce XSS vulnerabilities even if all of an organization's own applications are secure."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Rather than trusting all subdomains, use a whitelisted of trusted subdomains."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00200603_cross-origin-resource-sharing-all-subdomains-trusted",
+            "title": "Cross-origin resource sharing: all subdomains trusted"
+        },
+        {
+            "url": "https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties",
+            "title": "Exploiting CORS Misconfigurations"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/942.html",
+            "title": "CWE-942: Overly Permissive Cross-domain Whitelist"
+        }
+    ],
+    "severity": "Low",
+    "language": "English"
+}

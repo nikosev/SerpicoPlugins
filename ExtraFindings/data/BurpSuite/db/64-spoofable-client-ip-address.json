@@ -1,0 +1,26 @@
+{
+    "id": 4194576,
+    "title": "Spoofable client IP address",
+    "description": [
+        "If an application trusts an HTTP request header like X-Forwarded-For to accurately specify the remote IP address of the connecting client, then malicious clients can spoof their IP address. This behavior does not necessarily constitute a security vulnerability, however some applications use client IP addresses to enforce access controls and rate limits. For example, an application might expose administrative functionality only to clients connecting from the local IP address of the server, or allow a certain number of failed login attempts from each unique IP address. Consider reviewing relevant functionality to determine whether this might be the case."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "HTTP request headers such as X-Forwarded-For, True-Client-IP, and X-Real-IP are not a robust foundation on which to build any security measures, such as access controls. Any such measures should be replaced with more secure alternatives that are not vulnerable to spoofing.",
+            "If the platform application server returns incorrect information about the client's IP address due to the presence of any particular HTTP request header, then the server may need to be reconfigured, or an alternative method of identifying clients should be used."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400110_spoofable-client-ip-address",
+            "title": "Spoofable client IP address"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,29 @@
+{
+    "id": 6291672,
+    "title": "Backup file",
+    "description": [
+        "Publicly accessible backups and outdated copies of files can provide attackers with extra attack surface. Depending on the server configuration and file type, they may also expose source code, configuration details, and other information intended to remain secret."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Review the file to identify whether it's intended to be publicly accessible, and remove it from the server's web root if it isn't. It may also be worth auditing the server contents to find other outdated files, and taking measures to prevent the problem from recurring."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/006000d8_backup-file",
+            "title": " Backup file"
+        },
+        {
+            "url": "https://www.owasp.org/index.php/Review_Old,_Backup_and_Unreferenced_Files_for_Sensitive_Information_(OTG-CONFIG-004)",
+            "title": "Review Old, Backup and Unreferenced Files for Sensitive Information   "
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/530.html",
+            "title": "CWE-530: Exposure of Backup File to an Unauthorized Control Sphere"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,33 @@
+{
+    "id": 1049216,
+    "title": "ASP.NET tracing enabled",
+    "description": [
+        "ASP.NET tracing is a debugging feature that is designed for use during development to help troubleshoot problems. It discloses sensitive information to users, and if enabled in production contexts may present a serious security threat.",
+        "Application-level tracing enables any user to retrieve full details about recent requests to the application, including those of other users. This information typically includes session tokens and request parameters, which may enable an attacker to compromise other users and even take control of the entire application.",
+        "Page-level tracing returns the same information, but relating only to the current request. This may still contain sensitive data in session and server variables that would be of use to an attacker."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "To disable tracing, open the Web.config file for the application, and find the &lt;trace&gt; element within the &lt;system.web&gt; section. Either set the enabled attribute to &quot;false&quot; (to disable tracing) or set the localOnly attribute to &quot;true&quot; (to enable tracing only on the server itself).",
+            "Note that even with tracing disabled in this way, it is possible for individual pages to turn on page-level tracing either within the Page directive of the ASP.NET page, or programmatically through application code. If you observe tracing output only on some application pages, you should review the page source and the code behind, to find the reason why tracing is occurring.",
+            "It is strongly recommended that you refer to your platform's documentation relating to this issue, and do not rely solely on the above remediation."
+        ]
+    },
+    "references": [
+        {
+            "url": "{{https://portswigger.net/kb/issues/00100280_asp-net-tracing-enabled}}",
+            "title": "ASP.NET tracing enabled"
+        },
+        {
+            "url": "{{https://cwe.mitre.org/data/definitions/10.html}}",
+            "title": "CWE-10: ASP.NET Environment Issues"
+        },
+        {
+            "url": "{{https://cwe.mitre.org/data/definitions/11.html}}",
+            "title": "CWE-11: ASP.NET Misconfiguration: Creating Debug Binary"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

@@ -1,0 +1,38 @@
+{
+    "id": 1052928,
+    "title": "SSI injection",
+    "description": [
+        "Server-Side Include (SSI) injection vulnerabilities arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives. If the data is not strictly validated, an attacker can modify or inject directives to carry out malicious actions.",
+        "SSI injection vulnerabilities can typically be exploited to inject arbitrary content, including JavaScript, into the application's response, with the same impact as cross-site scripting. Depending on the server configuration, it may also be possible to read protected files, or perform arbitrary code execution on the server, with the same impact as OS command injection."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "If possible, applications should avoid incorporating user-controllable data into pages that are processed for SSI directives. In almost every situation, there are safer alternative methods of implementing the required functionality. If this is not considered feasible, then the data should be strictly validated. Ideally, a whitelist of specific accepted values should be used. Otherwise, only short alphanumeric strings should be accepted. Input containing any other data, including any conceivable SSI metacharacter, should be rejected."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00101100_ssi-injection",
+            "title": "SSI injection"
+        },
+        {
+            "url": "http://httpd.apache.org/docs/current/howto/ssi.html",
+            "title": "Introduction to Server-Side Includes"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/96.html",
+            "title": "CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/159.html",
+            "title": "CWE-159: Failure to Sanitize Special Element"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

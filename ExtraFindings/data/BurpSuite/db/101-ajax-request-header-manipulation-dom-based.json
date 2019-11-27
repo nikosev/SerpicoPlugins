@@ -1,0 +1,28 @@
+{
+    "id": 5245952,
+    "title": "Ajax request header manipulation (DOM-based)",
+    "description": [
+        "DOM-based vulnerabilities arise when a client-side script reads data from a controllable part of the DOM (for example, the URL) and processes this data in an unsafe way.",
+        "Ajax request header manipulation arises when a script writes controllable data into a header of an Ajax request that is issued using XmlHttpRequest. An attacker may be able to use the vulnerability to construct a URL that, if visited by another application user, will set an arbitrary header in the subsequent Ajax request.",
+        "The potential impact of the vulnerability depends on the role of specific HTTP headers in the server-side application's processing of the Ajax request. If the header is used to control the behavior that results from the Ajax request, then the attacker may be able to cause the user to perform unintended actions by manipulating the header.",
+        "Burp Suite automatically identifies this issue using static code analysis, which may lead to false positives that are not actually exploitable. The relevant code and execution paths should be reviewed to determine whether this vulnerability is indeed present, or whether mitigations are in place that would prevent exploitation."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "The most effective way to avoid DOM-based Ajax request header manipulation vulnerabilities is not to dynamically set Ajax request headers using data that originated from any untrusted source. This behavior should never be implemented for headers that have any role in controlling the effects of privileged actions within the application."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00500c00_ajax-request-header-manipulation-dom-based",
+            "title": "Ajax request header manipulation (DOM-based)"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        }
+    ],
+    "severity": "Low",
+    "language": "English"
+}

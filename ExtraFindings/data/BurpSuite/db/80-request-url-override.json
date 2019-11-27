@@ -1,0 +1,32 @@
+{
+    "id": 4198144,
+    "title": "Request URL override",
+    "description": [
+        "Some applications and frameworks support HTTP headers that can be used to override parts of the request URL, potentially affecting the routing and processing of the request.",
+        "Intermediate systems are often oblivious to these headers. In the case of reverse proxies and web application firewalls, this can lead to security rulesets being bypassed. If a caching system is in place, this may enable cache poisoning attacks. These headers may also enable forging of log entries.",
+        "Even if the application is intended to be accessed directly, some visitors may be using a corporate proxy enabling localised cache poisoning."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "To fully resolve this issue, locate the component that processes the affected headers, and disable it entirely. If you are using a framework, applying any pending security updates may do this for you.",
+            "If this isn't practical, an alternative workaround is to configure an intermediate system to automatically strip the affected headers before they are processed."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400f00_request-url-override",
+            "title": "Request URL override"
+        },
+        {
+            "url": "https://portswigger.net/blog/practical-web-cache-poisoning",
+            "title": "Practical Web Cache Poisoning"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/436.html",
+            "title": "CWE-436: Interpretation Conflict"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

@@ -1,0 +1,30 @@
+{
+    "id": 5244416,
+    "title": "Cookie without HttpOnly flag set",
+    "description": [
+        "If the HttpOnly attribute is set on a cookie, then the cookie's value cannot be read or set by client-side JavaScript. This measure makes certain client-side attacks, such as cross-site scripting, slightly harder to exploit by preventing them from trivially capturing the cookie's value via an injected script."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "There is usually no good reason not to set the HttpOnly flag on all cookies. Unless you specifically require legitimate client-side scripts within your application to read or set a cookie's value, you should set the HttpOnly flag by including this attribute within the relevant Set-cookie directive.",
+            "You should be aware that the restrictions imposed by the HttpOnly flag can potentially be circumvented in some circumstances, and that numerous other serious attacks can be delivered by client-side script injection, aside from simple cookie stealing."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00500600_cookie-without-httponly-flag-set",
+            "title": "Cookie without HttpOnly flag set"
+        },
+        {
+            "url": "https://www.owasp.org/index.php/HttpOnly",
+            "title": "Configuring HttpOnly"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Low",
+    "language": "English"
+}

@@ -1,0 +1,29 @@
+{
+    "id": 6292736,
+    "title": "Credit card numbers disclosed",
+    "description": [
+        "Applications sometimes disclose sensitive financial information such as credit card numbers. Responses containing credit card numbers may not represent any security vulnerability - for example, a number may belong to the logged-in user to whom it is displayed. If a credit card number is identified during a security assessment it should be verified, then application logic reviewed to identify whether its disclosure within the application is necessary and appropriate."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            ""
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00600500_credit-card-numbers-disclosed",
+            "title": " Credit card numbers disclosed"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/200.html",
+            "title": "CWE-200: Information Exposure"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/312.html",
+            "title": "CWE-312: Cleartext Storage of Sensitive Information"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

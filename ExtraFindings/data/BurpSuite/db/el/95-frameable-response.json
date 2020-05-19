@@ -1,0 +1,31 @@
+{
+    "id": 5245344,
+    "title": "Frameable Response (πιθανό Clickjacking)",
+    "description": [
+        "Εάν ο εξυπηρετητής μιας εφαρμογής δεν έχει ενεργοποιημένες τις HTTP κεφαλίδες X-Frame-Options ή Content-Security-Policy HTTP, είναι πιθανόν μια σελίδα ελεγχόμενη από έναν επιτιθέμενο να ανοίγει την εφαρμογή εντός iframe. Αυτό μπορεί να οδηγήσει σε επίθεση τύπου clickjacking στην οποία η σελίδα του επιτιθέμενου τοποθετείται με μια διαφορετική διεπαφή πάνω από την διεπαφή της εφαρμογής.",
+        "Κάνοντας τον χρήστη να πραγματοποιήσει ενέργειες όπως κλικ ποντικιού και πληκτρολόγηση, ο επιτιθέμενος μπορεί να προκαλέσει ανεπιθύμητες ενέργειες εντός της εφαρμογής. Αυτή η τεχνική μπορεί να παρακάμψει την ασφάλεια απέναντι σε επιθέσεις τύπου Cross-Site Request Forgery."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Για την πρόληψη της επίθεσης στις απαντήσεις του εξυπηρετητή της εφαρμογής πρέπει να περιλαμβάνεται η κεφαλίδα με το όνομα X-Frame-Options και την τιμή DENY ώστε να αποτρέπεται η τοποθέτηση της σελίδας εντός frame, ή με την τιμή SAMEORINGIN ώστε να επιτρέπεται η τοποθέτηση μιας σελίδας της εφαρμογής σε frame που περιλαμβάνεται μόνο σε άλλη σελίδα της ίδιας εφαρμογής.",
+            "Επιπλέον θα πρέπει η αυθεντικοποιηση να γίνεται σε κατάλληλα προστατευμένο (μέσω flags του server) αναγνωριστικό συνόδου (cookie) και όχι στο local data."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/005009a0_frameable-response-potential-clickjacking",
+            "title": "Frameable response (potential Clickjacking)"
+        },
+        {
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+            "title": "X-Frame-Options"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/693.html",
+            "title": "CWE-693: Protection Mechanism Failure"
+        }
+    ],
+    "severity": "Information",
+    "language": "Greek"
+}

@@ -1,0 +1,30 @@
+{
+    "id": 5244416,
+    "title": "Έλλειψη σήμανση (flag) Secure και httpOnly στα αναγνωριστικά συνόδου (cookies)",
+    "description": [
+        "Η σήμανση (flag) με όνομα “secure” αποδίδεται σε ένα αναγνωριστικό συνόδου (session) ώστε να μην είναι δυνατή η αποστολή του όταν μεταδίδεται μέσω μη ασφαλούς επικοινωνίας (πχ. πρωτόκολλο http).",
+        "Επιπλέον ένας επιτιθέμενος μπορεί, εκμεταλλευόμενος την ευπάθεια μιας εφαρμογής σε επιθέσεις τύπου Cross-Site Scripting (XSS), να αναγνώσει και να υποκλέψει το αναγνωριστικό συνόδου ενός νόμιμου χρήστη, με τη χρήση απλών εντολών της γλώσσας JavaScript. Για την αποτροπή των παραπάνω ενεργειών χρησιμοποιείται η σήμανση httpOnly, η οποία απαγορεύει την πρόσβαση στα cookies μέσω της γλώσσας αυτής. Η απουσία της σήμανσης καθιστά το αναγνωριστικό εκμεταλλεύσιμο."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Σε κάθε αίτημα (request) προς την εφαρμογή, θα πρέπει τα cookie “XSRF-TOKEN” και “session” να αντιστοιχίζονται αποκλειστικά με τη σύνοδο του κάθε χρήστη, με ασφαλή τρόπο. Να ορισθούν τα flags “secure” καθώς και “httpOnly” σε όλα τα αναγνωριστικά συνόδου, μέσω των ρυθμίσεων του εξυπηρετητή."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00500600_cookie-without-httponly-flag-set",
+            "title": "Cookie without HttpOnly flag set"
+        },
+        {
+            "url": "https://www.owasp.org/index.php/HttpOnly",
+            "title": "Configuring HttpOnly"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Low",
+    "language": "Greek"
+}

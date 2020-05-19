@@ -134,6 +134,12 @@
           "title"
         ]
       }
+    },
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "minLength": 2,
+      "maxLength": 255
     }
   },
   "additionalProperties": false,

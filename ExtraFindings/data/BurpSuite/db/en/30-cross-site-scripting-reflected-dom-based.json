@@ -11,7 +11,7 @@
     "fix": {
         "effort": 0, 
         "guidance": [
-            "The most effective way to avoid DOM-based cross-site scripting vulnerabilities is not to dynamically write data from any untrusted source into the HTML document. If the desired functionality of the application means that this behavior is unavoidable, then defenses must be implemented within the client-side code to prevent malicious data from introducing script code into the document. In many cases, the relevant data can be validated on a whitelist basis, to allow only content that is known to be safe. In other cases, it will be necessary to sanitize or encode the data. This can be a complex task, and depending on the context that the data is to be inserted may need to involve a combination of JavaScript escaping, HTML encoding, and URL encoding, in the appropriate sequence."
+            "Ο πιο αποτελεσματικός τρόπος για την αποφυγή των DOM-based cross-site scripting ευπαθειών είναι να μην γίνεται δυναμική εγγραφή δεδομένων από καμία μη αξιόπιστη πηγή στο HTML έγγραφο. Εάν είναι αναπόφευκτη η παραπάνω λειτουργία, τότε πρέπει να εφαρμοστούν άμυνες στον κώδικα της πλευράς πελάτη (client), για να αποφευχθεί η εισαγωγή κακόβουλων δεδομένων στο έγγραφο από καποιο script. Σε πολλές περιπτώσεις, τα σχετικά δεδομένα μπορούν να επικυρωθούν με whitelisting, επιτρέποντας μόνο περιεχόμενο που είναι γνωστό ότι είναι ασφαλές. Σε άλλες περιπτώσεις, θα πρέπει να κωδικοποιούνται τα δεδομένα. Αυτή μπορεί να είναι μια σύνθετη εργασία και ανάλογα με το πλαίσιο στο οποίο πρόκειται να εισαχθούν τα δεδομένα μπορεί να χρειαστεί να συμπεριληφθεί ένας συνδυασμός JavaScript escaping, κωδικοποίηση HTML και κωδικοποίηση διευθύνσεων URL, με την κατάλληλη σειρά."
         ]
     },
     "references": [

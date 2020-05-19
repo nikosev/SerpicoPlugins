@@ -1,0 +1,31 @@
+{
+    "id": 2097472,
+    "title": "HTTP request smuggling",
+    "description": [
+        "HTTP request smuggling vulnerabilities arise when websites route HTTP requests through webservers with inconsistent HTTP parsing.",
+        "By supplying a request that gets interpreted as being different lengths by different servers, an attacker can poison the back-end TCP/TLS socket and prepend arbitrary data to the next request. Depending on the website's functionality, this can be used to bypass front-end security rules, access internal systems, poison web caches, and launch assorted attacks on users who are actively browsing the site."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "You can resolve all variants of this vulnerability by configuring the front-end server to exclusively use HTTP/2 to communicate to back-end systems, or by disabling back-end connection reuse entirely. Alternatively, you could ensure all servers in the chain run the same webserver software with the same configuration.",
+            "Specific instances of this vulnerability can be resolved by reconfiguring the front-end server to normalize ambiguous requests before routing them onward, or by configuring the back-end server to reject the message and close the connection when it encounters an ambiguous request."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/web-security/request-smuggling",
+            "title": "HTTP request smuggling"
+        },
+        {
+            "url": "https://portswigger.net/blog/http-desync-attacks-request-smuggling-reborn",
+            "title": "HTTP Desync Attacks: Request Smuggling Reborn"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/444.html",
+            "title": "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

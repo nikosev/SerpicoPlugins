@@ -1,0 +1,34 @@
+{
+    "id": 5246980,
+    "title": "Link manipulation (stored)",
+    "description": [
+        "Link manipulation occurs when an application embeds user input into the path or domain of URLs that appear within application responses. An attacker can use this vulnerability to construct a link that, if visited by another application user, will modify the target of URLs within the response. It may be possible to leverage this to perform various attacks, such as:",
+        "<bullet>Manipulating the path of an on-site link that has sensitive parameters in the URL. If the response from the modified path contains references to off-site resources, then the sensitive data might be leaked to external domains via the Referer header.</bullet>",
+        "<bullet>Manipulating the URL targeted by a form action, making the form submission have unintended side effects.</bullet>",
+        "<bullet>Manipulating the URL used by a CSS import statement to point to an attacker-uploaded file, resulting in CSS injection.</bullet>",
+        "<bullet>Injecting on-site links containing XSS exploits, thereby bypassing browser anti-XSS defenses, since those defenses typically do not operate on on-site links.</bullet>",
+        "The security impact of this issue depends largely on the nature of the application functionality. Even if it has no direct impact on its own, an attacker may use it in conjunction with other vulnerabilities to escalate their overall severity."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Consider using a whitelist to restrict user input to safe values. Please note that in some situations this issue will have no security impact, meaning no remediation is necessary."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00501004_link-manipulation-stored",
+            "title": "Link manipulation (stored)"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/73.html",
+            "title": "CWE-73: External Control of File Name or Path"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/20.html",
+            "title": "CWE-20: Improper Input Validation"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

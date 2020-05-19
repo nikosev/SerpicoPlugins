@@ -1,0 +1,49 @@
+{
+    "id": 2097937,
+    "title": "Cross-site scripting (reflected DOM-based)",
+    "description": [
+        "Reflected DOM-based vulnerabilities arise when data is copied from a request and echoed into the application's immediate response within a part of the DOM that is then processed in an unsafe way by a client-side script. An attacker can leverage the reflection to control a part of the response (for example, a JavaScript string) that can be used to trigger the DOM-based vulnerability.",
+        "DOM-based cross-site scripting arises when a script writes controllable data into the HTML document in an unsafe way. An attacker may be able to use the vulnerability to construct a URL that, if visited by another application user, will cause JavaScript code supplied by the attacker to execute within the user's browser in the context of that user's session with the application.",
+        "The attacker-supplied code can perform a wide variety of actions, such as stealing the victim's session token or login credentials, performing arbitrary actions on the victim's behalf, and logging their keystrokes.",
+        "Users can be induced to visit the attacker's crafted URL in various ways, similar to the usual attack delivery vectors for reflected cross-site scripting vulnerabilities.",
+        "Burp Suite automatically identifies this issue using static code analysis, which may lead to false positives that are not actually exploitable. The relevant code and execution paths should be reviewed to determine whether this vulnerability is indeed present, or whether mitigations are in place that would prevent exploitation."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Ο πιο αποτελεσματικός τρόπος για την αποφυγή των DOM-based cross-site scripting ευπαθειών είναι να μην γίνεται δυναμική εγγραφή δεδομένων από καμία μη αξιόπιστη πηγή στο HTML έγγραφο. Εάν είναι αναπόφευκτη η παραπάνω λειτουργία, τότε πρέπει να εφαρμοστούν άμυνες στον κώδικα της πλευράς πελάτη (client), για να αποφευχθεί η εισαγωγή κακόβουλων δεδομένων στο έγγραφο από καποιο script. Σε πολλές περιπτώσεις, τα σχετικά δεδομένα μπορούν να επικυρωθούν με whitelisting, επιτρέποντας μόνο περιεχόμενο που είναι γνωστό ότι είναι ασφαλές. Σε άλλες περιπτώσεις, θα πρέπει να κωδικοποιούνται τα δεδομένα. Αυτή μπορεί να είναι μια σύνθετη εργασία και ανάλογα με το πλαίσιο στο οποίο πρόκειται να εισαχθούν τα δεδομένα μπορεί να χρειαστεί να συμπεριληφθεί ένας συνδυασμός JavaScript escaping, κωδικοποίηση HTML και κωδικοποίηση διευθύνσεων URL, με την κατάλληλη σειρά."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00200311_cross-site-scripting-reflected-dom-based",
+            "title": "Cross-site scripting (reflected DOM-based)"
+        },
+        {
+            "url": "https://portswigger.net/web-security/cross-site-scripting",
+            "title": "Cross-site scripting"
+        },
+        {
+            "url": "https://portswigger.net/web-security/cross-site-scripting/reflected",
+            "title": "Reflected XSS"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/79.html",
+            "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/80.html",
+            "title": "CWE-80: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/159.html",
+            "title": "https://cwe.mitre.org/data/definitions/159.html"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

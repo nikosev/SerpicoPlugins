@@ -1,0 +1,25 @@
+{
+    "id": 4195584,
+    "title": "Cross-domain POST",
+    "description": [
+        "Applications sometimes use POST requests to transfer sensitive information from one domain to another. This does not necessarily constitute a security vulnerability, but it creates a trust relationship between the two domains. Data transmitted between domains should be reviewed to determine whether the originating application should be trusting the receiving domain with this information."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            ""
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400500_cross-domain-post",
+            "title": "Cross-domain POST"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/16.html",
+            "title": "CWE-16: Configuration"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

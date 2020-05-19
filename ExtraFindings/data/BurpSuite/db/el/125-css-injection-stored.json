@@ -1,0 +1,43 @@
+{
+    "id": 5247745,
+    "title": "Cascading Style Sheet (CSS) Injection - Stored",
+    "description": [
+        "Η ευπάθεια τύπου Cascading Style Sheet (CSS) Injection προκύπτει όταν μια δικτυακή εφαρμογή είτε εισάγει ένα αρχείο μορφοποίησης (style sheet) από ένα URL που παρέχει ένας μη εξουσιοδοτημένος χρήστης είτε ενσωματώνει δεδομένα εισόδου του χρήστη σε τμήματα της μορφοποίησης της σελίδας χωρίς πρώτα να τα επικυρώσει.",
+        "Η ευπάθεια Stored CSS Injection προκύπτει όταν το αρχείο μορφοποίησης ή τα δεδομένα που εισήγαγε ο χρήστης αποθηκεύονται από την εφαρμογή σε κάποιο σημείο στη διάταξη μετόπισθεν (backend), με αποτέλεσμα να αποκτήσουν ανθεκτικότητα στο χρόνο (persistence).",
+        "(Κίνδυνος)Η δυνατότητα ενός κακόβουλου χρήστη να τροποποιήσει αυθαίρετα το αρχείο μορφοποίησης με το οποίο προβάλλεται μια εφαρμογή στο πρόγραμμα περιήγησης ενός νόμιμου χρήστη μπορεί να έχει ποικίλες συνέπειες, μεταξύ των οποίων:",
+        "<bullet>Εκτέλεση κώδικα JavaScript που επιθυμεί ο επιτιθέμενος.</bullet>",
+        "<bullet>Ανάγνωση του κώδικα πηγαίου κώδικα HTML των σελίδων μιας εφαρμογής, στον οποίο μπορεί να περιέχονται ευαίσθητες πληροφορίες, όπως για παράδειγμα μοναδικά αναγνωριστικά συνόδου για την αντιμετώπιση επιθέσεων τύπου CSRF (anti-CSRF tokens).</bullet>",
+        "<bullet>Συλλογή ευαίσθητων δεδομένων της εφαρμογής, πραγματοποιώντας εισαγωγή αρχείου μορφοποίησης σε μια διεύθυνση URL στον τομέα (domain) του εισβολέα και παρακολουθώντας την κεφαλίδα του εισερχόμενου Referer.</bullet>"
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Για την αντιμετώπιση της ευπάθειας Stored Cascading Style Sheet (CSS) Injection θα πρέπει να εκτελείται έλεγχος και επικύρωση των δεδομένων που εισάγονται από τον χρήστη σε κάθε πεδίο της εφαρμογής το οποίο του παρέχει αυτή τη δυνατότητα.",
+            "Επιπλέον, θα πρέπει να εφαρμόζεται πολιτική επιτρεπόμενων αρχείων μορφοποίησης (whitelisting), ώστε να αποτρέπεται η χρησιμοποίηση οποιουδήποτε άλλου αυθαίρετου αρχείου."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00501301_css-injection-stored",
+            "title": "CSS injection (stored)"
+        },
+        {
+            "url": "https://portswigger.net/blog/detecting-and-exploiting-path-relative-stylesheet-import-prssi-vulnerabilities#badcss",
+            "title": "Malicious CSS"
+        },
+        {
+            "url": "https://mksben.l0.cm/2015/10/css-based-attack-abusing-unicode-range.html",
+            "title": "CSS based Attack: Abusing unicode-range of @font-face"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/73.html",
+            "title": "CWE-73: External Control of File Name or Path"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/20.html",
+            "title": "CWE-20: Improper Input Validation"
+        }
+    ],
+    "severity": "Medium",
+    "language": "Greek"
+}

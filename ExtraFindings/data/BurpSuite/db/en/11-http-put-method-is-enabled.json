@@ -1,0 +1,25 @@
+{
+    "id": 1050880,
+    "title": "HTTP PUT method is enabled",
+    "description": [
+        "The HTTP PUT method is normally used to upload data that is saved on the server at a user-supplied URL. If enabled, an attacker may be able to place arbitrary, and potentially malicious, content into the application. Depending on the server's configuration, this may lead to compromise of other users (by uploading client-executable scripts), compromise of the server (by uploading server-executable code), or other attacks."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "Refer to your platform's documentation to determine how to disable the HTTP PUT method on the server."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00100900_http-put-method-is-enabled",
+            "title": "HTTP PUT method is enabled"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/650.html",
+            "title": "CWE-650: Trusting HTTP Permission Methods on the Server Side"
+        }
+    ],
+    "severity": "High",
+    "language": "English"
+}

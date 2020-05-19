@@ -1,0 +1,29 @@
+{
+    "id": 7340544,
+    "title": "Base64-encoded data in parameter",
+    "description": [
+        "Applications sometimes Base64-encode parameters in an attempt to obfuscate them from users or facilitate transport of binary data. The presence of Base64-encoded data may indicate security-sensitive information or functionality that is worthy of further investigation. The data should be reviewed to determine whether it contains any interesting information, or provides any additional entry points for malicious input."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            ""
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00700200_base64-encoded-data-in-parameter",
+            "title": "Base64-encoded data in parameter"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/310.html",
+            "title": "CWE-310: Cryptographic Issues"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/311.html",
+            "title": "CWE-311: Missing Encryption of Sensitive Data"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

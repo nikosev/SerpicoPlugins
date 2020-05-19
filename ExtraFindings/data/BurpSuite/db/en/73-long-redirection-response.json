@@ -1,0 +1,27 @@
+{
+    "id": 4196352,
+    "title": "Long redirection response",
+    "description": [
+        "The application returned a redirection response containing a &quot;long&quot; message body. Ordinarily, this content is not displayed to the user, because the browser automatically follows the redirection.",
+        "Occasionally, redirection responses contain sensitive data. For example, if the user requests a page that they are not authorized to view, then an application might issue a redirection to a different page, but also include the contents of the prohibited page.",
+        "You should review the contents of the response to determine whether it contains anything sensitive."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "In cases where the application handles requests for unauthorized content by redirecting to a different URL, the application should ensure that no sensitive content is included within the redirection response. Depending on the application and the platform, this might involve checking for proper authorization earlier in the request handling logic, or using a different API to perform the redirection."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00400800_long-redirection-response",
+            "title": "Long redirection response"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/698.html",
+            "title": "CWE-698: Execution After Redirect (EAR)"
+        }
+    ],
+    "severity": "Information",
+    "language": "English"
+}

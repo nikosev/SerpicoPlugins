@@ -1,0 +1,42 @@
+{
+    "id": 1050368,
+    "title": "XML injection",
+    "description": [
+        "XML or SOAP injection vulnerabilities arise when user input is inserted into a server-side XML document or SOAP message in an unsafe way. It may be possible to use XML metacharacters to modify the structure of the resulting XML. Depending on the function in which the XML is used, it may be possible to interfere with the application's logic, to perform unauthorized actions or access sensitive data.",
+        "This kind of vulnerability can be difficult to detect and exploit remotely; you should review the application's response, and the purpose that the relevant input performs within the application's functionality, to determine whether it is indeed vulnerable."
+    ],
+    "fix": {
+        "effort": 0, 
+        "guidance": [
+            "The application should validate or sanitize user input before incorporating it into an XML document or SOAP message. It may be possible to block any input containing XML metacharacters such as &lt; and &gt;. Alternatively, these characters can be replaced with the corresponding entities: &amp;lt; and &amp;gt;."
+        ]
+    },
+    "references": [
+        {
+            "url": "https://portswigger.net/kb/issues/00100700_xml-injection",
+            "title": "XML injection"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/91.html",
+            "title": "CWE-91: XML Injection (aka Blind XPath Injection)"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/116.html",
+            "title": "CWE-116: Improper Encoding or Escaping of Output"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/159.html",
+            "title": "CWE-159: Failure to Sanitize Special Element"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/611.html",
+            "title": "CWE-611: Improper Restriction of XML External Entity Reference"
+        },
+        {
+            "url": "https://cwe.mitre.org/data/definitions/776.html",
+            "title": "CWE-776: Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')"
+        }
+    ],
+    "severity": "Medium",
+    "language": "English"
+}
